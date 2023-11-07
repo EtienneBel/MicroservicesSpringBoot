@@ -1,27 +1,39 @@
-target/
+# General
+/target/
 !.mvn/wrapper/maven-wrapper.jar
-/service-registry/.mvn/
 
-### STS ###
-.apt_generated
+# IDE specific
+.idea/
+.vscode/
+*.iml
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# Compiled binaries
+*.class
+*.jar
+
+# Package Files
+*.war
+*.ear
+
+# Maven
+.m2/
+
+# Gradle
+.gradle/
+build/
+
+# Eclipse
+.settings/
 .classpath
-.factorypath
 .project
-.settings
-.springBeans
-.sts4-cache
 
-### IntelliJ IDEA ###
-.idea
-*.iws
+# Intellij
 *.iml
 *.ipr
-
-### NetBeans ###
-nbproject/private/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
-
-### VS Code ###
-.vscode/
+*.iws
+.idea/
