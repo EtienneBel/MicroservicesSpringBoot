@@ -1,36 +1,35 @@
 # MicroservicesSpringBoot
 
-service-registry/.gitignore
-
-service-registry/target/
-service-registry/!.mvn/wrapper/maven-wrapper.jar
-service-registry/!**/src/main/**/target/
-service-registry/!**/src/test/**/target/
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
 
 ### STS ###
-service-registry/.apt_generated
-service-registry/.classpath
-service-registry/.factorypath
-service-registry/.project
-service-registry/.settings
-service-registry/.springBeans
-service-registry/.sts4-cache
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
 
 ### IntelliJ IDEA ###
-service-registry/.idea
-service-registry/*.iws
-service-registry/*.iml
-service-registry/*.ipr
+.idea
+*.iws
+*.iml
+*.ipr
 
 ### NetBeans ###
-service-registry//nbproject/private/
-service-registry//nbbuild/
-service-registry//dist/
-service-registry//nbdist/
-service-registry//.nb-gradle/
-service-registry/build/
-service-registry/!**/src/main/**/build/
-service-registry/!**/src/test/**/build/
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
 
 ### VS Code ###
-service-registry/.vscode/
+.vscode/
