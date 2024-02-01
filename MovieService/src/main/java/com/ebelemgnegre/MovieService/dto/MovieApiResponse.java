@@ -1,5 +1,6 @@
 package com.ebelemgnegre.MovieService.dto;
 
+import com.ebelemgnegre.MovieService.model.Movie;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

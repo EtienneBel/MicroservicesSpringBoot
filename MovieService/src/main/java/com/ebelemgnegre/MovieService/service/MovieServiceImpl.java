@@ -1,6 +1,6 @@
 package com.ebelemgnegre.MovieService.service;
 
-import com.ebelemgnegre.MovieService.dto.Movie;
+import com.ebelemgnegre.MovieService.model.Movie;
 import com.ebelemgnegre.MovieService.dto.MovieApiResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Value;
@@ -14,7 +14,7 @@ import java.net.URISyntaxException;
 import java.util.List;
 
 @Service
-public class MovieServiceImpl implements MovieService{
+public class MovieServiceImpl implements MovieService {
 
     @Value("${api.key}")
     private String apiKey;
@@ -28,26 +28,24 @@ public class MovieServiceImpl implements MovieService{
         headers.set("accept", MediaType.APPLICATION_JSON_VALUE);
         headers.set("Authorization", "Bearer " + apiKey);
 
-        RequestEntity<?> requestEntity=null;
+        ResponseEntity<String> responseEntity = null;
         try {
-            requestEntity = new RequestEntity<>(headers, HttpMethod.GET, new URI(apiUrl));
-        }catch (URISyntaxException e){
+            responseEntity = new RestTemplate().exchange(
+                    new RequestEntity<>(
+                            headers, HttpMethod.GET, new URI(apiUrl)
+                    ),
+                    String.class);
+        } catch (URISyntaxException e) {
             e.printStackTrace();
         }
 
-        ResponseEntity<String> responseEntity = new RestTemplate().exchange(requestEntity, String.class);
-
-        ObjectMapper objectMapper = new ObjectMapper();
         MovieApiResponse movieApiResponse = new MovieApiResponse();
         try {
-            System.out.println(responseEntity.getBody());
-            movieApiResponse = objectMapper.readValue(responseEntity.getBody(), MovieApiResponse.class);
+            movieApiResponse = new ObjectMapper().readValue(responseEntity.getBody(), MovieApiResponse.class);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        List<Movie> movies = movieApiResponse.getResults();
-
-        return movies;
+        return movieApiResponse.getResults();
     }
 }
