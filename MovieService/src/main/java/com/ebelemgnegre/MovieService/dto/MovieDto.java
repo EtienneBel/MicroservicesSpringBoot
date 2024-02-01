@@ -1,4 +1,4 @@
-package com.ebelemgnegre.UserService.dto;
+package com.ebelemgnegre.MovieService.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -18,7 +18,7 @@ public class MovieDto {
     private boolean adult;
     private String backdropPath;
     private List<Integer> genreIds;
-    private long id;
+    private int id;
     private String originalLanguage;
     private String originalTitle;
     private String overview;

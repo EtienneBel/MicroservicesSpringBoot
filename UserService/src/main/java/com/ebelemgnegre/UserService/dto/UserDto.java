@@ -12,8 +12,9 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class UserDtoRequest {
-        private long userId;
-        private String username;
-        private List<Long> moviesIds;
-    }
+public class UserDto {
+    private long userId;
+    private String username;
+    private MovieDto movieDto;
+    private List<MovieDto> movieDtos;
+}

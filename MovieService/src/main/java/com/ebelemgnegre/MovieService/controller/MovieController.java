@@ -1,11 +1,13 @@
 package com.ebelemgnegre.MovieService.controller;
 
+import com.ebelemgnegre.MovieService.dto.MovieDto;
 import com.ebelemgnegre.MovieService.model.Movie;
 import com.ebelemgnegre.MovieService.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,5 +23,10 @@ public class MovieController {
     @GetMapping
     public ResponseEntity<List<Movie>> getAllTopRatedMovies() {
         return new ResponseEntity<>(movieService.getAllTopRatedMovies(), HttpStatus.OK);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<MovieDto> getMovie(@PathVariable Long id) {
+        return new ResponseEntity<>(movieService.getMovie(id), HttpStatus.OK);
     }
 }

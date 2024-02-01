@@ -1,8 +1,11 @@
 package com.ebelemgnegre.UserService.service;
 
-import com.ebelemgnegre.UserService.dto.UserDtoRequest;
+import com.ebelemgnegre.UserService.dto.UserDto;
 import com.ebelemgnegre.UserService.dto.UserDtoResponse;
 
 public interface UserService {
-    UserDtoResponse addUser(UserDtoRequest userDtoRequest);
+    UserDtoResponse addUser(UserDto userDto);
+
+    void saveFavoriteMovie(UserDto userDto);
+
 }
