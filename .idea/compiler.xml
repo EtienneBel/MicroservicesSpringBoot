@@ -10,9 +10,11 @@
         <module name="ServiceRegistry" />
         <module name="ConfigServer" />
         <module name="UserService" />
+        <module name="ApiGateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="ApiGateway" target="17" />
       <module name="ConfigServer" target="17" />
       <module name="MovieService" target="17" />
       <module name="ServiceRegistry" target="17" />
@@ -21,6 +23,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ApiGateway" options="-parameters" />
       <module name="ConfigServer" options="-parameters" />
       <module name="MovieService" options="-parameters" />
       <module name="ServiceRegistry" options="-parameters" />
