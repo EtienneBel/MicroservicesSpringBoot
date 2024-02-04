@@ -6,12 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="UserService" />
         <module name="MovieService" />
         <module name="ServiceRegistry" />
+        <module name="ConfigServer" />
+        <module name="UserService" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="ConfigServer" target="17" />
       <module name="MovieService" target="17" />
       <module name="ServiceRegistry" target="17" />
       <module name="UserService" target="17" />
@@ -19,6 +21,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ConfigServer" options="-parameters" />
       <module name="MovieService" options="-parameters" />
       <module name="ServiceRegistry" options="-parameters" />
       <module name="UserService" options="-parameters" />
