@@ -14,8 +14,18 @@ spring:
           uri: lb://MOVIE-SERVICE
           predicates:
             - Path=/movie/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: MOVIE-SERVICE
+                fallbackUri: forward:/movieServiceFallback
         - id: USER-SERVICE
           uri: lb://USER-SERVICE
           predicates:
             - Path=/user/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: USER-SERVICE
+                fallbackUri: forward:/userServiceFallback
 
