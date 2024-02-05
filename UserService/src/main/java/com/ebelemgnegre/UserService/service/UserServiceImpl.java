@@ -23,7 +23,7 @@ public class UserServiceImpl implements UserService {
     @Autowired
     MovieRepository movieRepository;
     @Autowired
-    private WebClient webClient;
+    private WebClient.Builder webClientBuilder;
 
     @Override
     public UserDtoResponse addUser(UserDto userDto) {
@@ -43,7 +43,7 @@ public class UserServiceImpl implements UserService {
     public void saveFavoriteMovie(UserDto userDto) {
         try {
             // Using WebClient
-            MovieDto movieDto = webClient.get()
+            MovieDto movieDto = webClientBuilder.build().get()
                     .uri("/" + userDto.getMovieDto().getId())
                     .retrieve()
                     .bodyToMono(MovieDto.class).block();
