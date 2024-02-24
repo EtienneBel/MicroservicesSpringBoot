@@ -1,0 +1,97 @@
+### Maven ###
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/maven-wrapper.jar
+!**/src/test/**/maven-wrapper.jar
+
+### Java ###
+*.class
+*.log
+*.ctxt
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+hs_err_pid*
+
+### Spring Boot ###
+*.log
+*.sql
+*.xml
+.springBeans
+.spring-boot-devtools.lock
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+
+### Eclipse ###
+.classpath
+.project
+.settings/
+*.launch
+!.mvn/wrapper/maven-wrapper.jar
+
+### Visual Studio Code ###
+.vscode/
+
+### macOS ###
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+### Windows ###
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+
+### Linux ###
+*~
+
+### Other common ignore patterns ###
+*.swp
+*.bak
+*.tmp
+*~.nib
+local.properties
+.loadpath
+.rebel.xml
+.directory
+.sass-cache
+*.sublime-workspace
+*.sublime-project
+.svn/
+.cvs/
+/SCCS/
+/.idea/
+*.sw?
+*.bak
+*.orig
+*.old
+temp/
+temp.*
+/temp
+*.tmp
+*.log
