@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Table(name = "movies")
 @Data
@@ -17,4 +19,6 @@ public class Movie {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private long referenceId;
+    @ManyToMany(mappedBy = "movies")
+    private List<User> users;
 }

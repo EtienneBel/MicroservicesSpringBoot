@@ -19,6 +19,6 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String username;
-    @OneToMany
+    @ManyToMany
     private List<Movie> movies;
 }

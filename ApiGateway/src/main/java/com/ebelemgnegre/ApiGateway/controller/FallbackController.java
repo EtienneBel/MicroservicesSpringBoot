@@ -13,6 +13,7 @@ public class FallbackController {
 
     @GetMapping("/movieServiceFallback")
     public String movieServiceFallback(){
+
         return "Movie service is currently unavailable. Please try again later.";
     }
 }
