@@ -34,8 +34,8 @@ okta:
   oauth2:
     issuer: https://dev-84928916.okta.com/oauth2/default
     audience: api://default
-    client-id: 0oafchkya4QzyPtzS5d7
-    client-secret: O9JF2bN7f5ZDZZmsNglvtSyZ4xJod196haHG80judrtCHj-BKpxsF8OHcX6VRO5h
+    client-id: XXXXX
+    client-secret: XXXXXX
     scopes: openid, profile, email, offline_access
 
 # Configuration for applications to act as an OAuth2 Resource Server and Client
@@ -50,5 +50,5 @@ okta:
             provider: okta
             authorization-grant-type: client_credentials
             scope: openid, profile, email, offline_access
-            client-id: 0oafchkya4QzyPtzS5d7
-            client-secret: O9JF2bN7f5ZDZZmsNglvtSyZ4xJod196haHG80judrtCHj-BKpxsF8OHcX6VRO5h
+            client-id: XXXXX
+            client-secret: XXXXXX

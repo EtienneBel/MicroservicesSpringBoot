@@ -14,6 +14,6 @@ spring:
           issuer-uri: https://dev-84928916.okta.com/oauth2/default
 
 api:
-  key: eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2NWxxxxxxxxx
+  key: eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2NWE5YzJjMmFiZTMxNjYwMDMwOGZhMDJlMDY0NzVmNyIsInN1YiI6IjY1YmE3OTk1ZjkwYjE5MDE3YzA3MzU3ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aU-C_y7WR97CP6-2TWZegkGVbBvXW_qPpD0FuNDuWoc
   url: https://api.themoviedb.org/3/movie
 
