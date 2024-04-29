@@ -33,37 +33,6 @@ out/
 ###########
 .vscode/
 
-
-# Operating System Files #
-##########################
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-
-# Other files and folders to ignore #
-####################################
-HELP.md
-**/*.log
-**/*.bak
-**/*.tmp
-**/*.swp
-
-# Docker #
-##########
-**/.docker/
-
-# Specific to your structure #
-##############################
-ApiGateway/
-ConfigServer/
-MovieService/
-UserService/
-ServiceRegistry/
-
 # If you're using git submodules, you might want to include #
 ############################################################
 .gitmodules
@@ -72,4 +41,4 @@ ServiceRegistry/
 # Add environment-specific files/folders #
 ##########################################
 # Application configuration
-/src/main/resources/application.yml
+**/src/main/resources/application.yml
