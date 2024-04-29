@@ -1,33 +1,22 @@
 # Compiled source #
 ###################
-target/
 **/target/
 **/build/
+!**/src/main/**/target/
+!**/src/test/**/target/
 
 # Maven #
 #########
-**/.mvn/
-**/mvnw
-**/mvnw.cmd
-**/pom.xml.tag
-**/pom.xml.releaseBackup
-**/pom.xml.versionsBackup
-**/pom.xml.next
-**/release.properties
-dependency-reduced-pom.xml
-buildNumber.properties
-.mvn/timing.properties
+**/.mvn
+**/.mvn/timing.properties
+!**/.mvn/wrapper/maven-wrapper.jar
+!**/.mvn/wrapper/maven-wrapper.properties
+!**/.mvn/wrapper/mvnw
+!**/.mvn/wrapper/mvnw.cmd
 
 # IntelliJ IDEA #
 #################
-.idea/
-*.iml
-*.iws
-*.ipr
-*.ids
-*.idb
-out/
-*.idea_modules/
+.idea
 
 # VS Code #
 ###########
@@ -35,10 +24,9 @@ out/
 
 # If you're using git submodules, you might want to include #
 ############################################################
-.gitmodules
+**/.gitignore
 **/modules/
 
-# Add environment-specific files/folders #
+# Application configuration #
 ##########################################
-# Application configuration
 **/src/main/resources/application.yml
