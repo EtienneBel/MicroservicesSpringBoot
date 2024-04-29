@@ -1,97 +1,75 @@
-### Maven ###
+# Compiled source #
+###################
 target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
+**/target/
+**/build/
+
+# Maven #
+#########
+**/.mvn/
+**/mvnw
+**/mvnw.cmd
+**/pom.xml.tag
+**/pom.xml.releaseBackup
+**/pom.xml.versionsBackup
+**/pom.xml.next
+**/release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
-.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/maven-wrapper.jar
-!**/src/test/**/maven-wrapper.jar
 
-### Java ###
-*.class
-*.log
-*.ctxt
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
-hs_err_pid*
-
-### Spring Boot ###
-*.log
-*.sql
-*.xml
-.springBeans
-.spring-boot-devtools.lock
-
-### IntelliJ IDEA ###
-.idea
-*.iws
+# IntelliJ IDEA #
+#################
+.idea/
 *.iml
+*.iws
 *.ipr
+*.ids
+*.idb
 out/
+*.idea_modules/
 
-### Eclipse ###
-.classpath
-.project
-.settings/
-*.launch
-!.mvn/wrapper/maven-wrapper.jar
-
-### Visual Studio Code ###
+# VS Code #
+###########
 .vscode/
 
-### macOS ###
+
+# Operating System Files #
+##########################
 .DS_Store
-.AppleDouble
-.LSOverride
-Icon
+.DS_Store?
 ._*
-
-### Windows ###
-Thumbs.db
+.Spotlight-V100
+.Trashes
 ehthumbs.db
-Desktop.ini
-$RECYCLE.BIN/
-*.cab
-*.msi
-*.msm
-*.msp
-*.lnk
+Thumbs.db
 
-### Linux ###
-*~
+# Other files and folders to ignore #
+####################################
+HELP.md
+**/*.log
+**/*.bak
+**/*.tmp
+**/*.swp
 
-### Other common ignore patterns ###
-*.swp
-*.bak
-*.tmp
-*~.nib
-local.properties
-.loadpath
-.rebel.xml
-.directory
-.sass-cache
-*.sublime-workspace
-*.sublime-project
-.svn/
-.cvs/
-/SCCS/
-/.idea/
-*.sw?
-*.bak
-*.orig
-*.old
-temp/
-temp.*
-/temp
-*.tmp
-*.log
+# Docker #
+##########
+**/.docker/
+
+# Specific to your structure #
+##############################
+ApiGateway/
+ConfigServer/
+MovieService/
+UserService/
+ServiceRegistry/
+
+# If you're using git submodules, you might want to include #
+############################################################
+.gitmodules
+**/modules/
+
+# Add environment-specific files/folders #
+##########################################
+# Application configuration
+/src/main/resources/application-*.yml

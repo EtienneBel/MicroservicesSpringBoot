@@ -13,13 +13,6 @@
         <module name="ApiGateway" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="ApiGateway" target="17" />
-      <module name="ConfigServer" target="17" />
-      <module name="MovieService" target="17" />
-      <module name="ServiceRegistry" target="17" />
-      <module name="UserService" target="17" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
