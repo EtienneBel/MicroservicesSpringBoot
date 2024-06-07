@@ -1,0 +1,48 @@
+services:
+  serviceregistry:
+    image: 'etiennebel/microspring_serviceregistry'
+    container_name: serviceregistry
+    ports:
+      - '8761:8761'
+
+  configserver:
+    image: 'etiennebel/microspring_configserver'
+    container_name: configserver
+    ports:
+      - '9296:9296'
+    environment:
+      - EUREKA_SERVER_ADDRESS=http://serviceregistry:8761/eureka
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://configserver:9296/actuator/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    depends_on:
+      - serviceregistry
+
+  apigateway:
+    image: 'etiennebel/microspring_apigateway'
+    container_name: cloudgateway
+    ports:
+      - '9090:9090'
+    environment:
+      - EUREKA_SERVER_ADDRESS=http://serviceregistry:8761/eureka
+      - CONFIG_SERVER_URL=configserver
+    depends_on:
+      configserver:
+        condition: service_healthy
+
+#  productDb:
+#    container_name: productDb
+#    image: mysql:latest
+#    volumes:
+#      - mysql_data:/var/lib/mysql
+#    environment:
+#      MYSQL_USER: root
+#      MYSQL_ROOT_PASSWORD: root
+#      MYSQL_DATABASE: productDb
+#    ports:
+#      - "3306:3306"
+
+#volumes:
+#  mysql_data:

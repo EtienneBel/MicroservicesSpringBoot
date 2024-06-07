@@ -6,6 +6,6 @@ import com.ebelemgnegre.UserService.dto.UserDtoResponse;
 public interface UserService {
     UserDtoResponse addUser(UserDto userDto);
 
-    void saveFavoriteMovie(UserDto userDto);
+    UserDtoResponse saveFavoriteMovie(UserDto userDto);
 
 }
