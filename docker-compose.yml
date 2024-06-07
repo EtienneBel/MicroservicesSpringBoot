@@ -1,15 +1,15 @@
 services:
   serviceregistry:
-    image: 'etiennebel/microspring_serviceregistry'
+    image: "etiennebel/microspring_serviceregistry"
     container_name: serviceregistry
     ports:
-      - '8761:8761'
+      - "8761:8761"
 
   configserver:
-    image: 'etiennebel/microspring_configserver'
+    image: "etiennebel/microspring_configserver"
     container_name: configserver
     ports:
-      - '9296:9296'
+      - "9296:9296"
     environment:
       - EUREKA_SERVER_ADDRESS=http://serviceregistry:8761/eureka
     healthcheck:
@@ -21,10 +21,22 @@ services:
       - serviceregistry
 
   apigateway:
-    image: 'etiennebel/microspring_apigateway'
+    image: "etiennebel/microspring_apigateway"
     container_name: cloudgateway
     ports:
-      - '9090:9090'
+      - "9090:9090"
+    environment:
+      - EUREKA_SERVER_ADDRESS=http://serviceregistry:8761/eureka
+      - CONFIG_SERVER_URL=configserver
+    depends_on:
+      configserver:
+        condition: service_healthy
+
+  movieservice:
+    image: "etiennebel/microspring_movieservice"
+    container_name: movieservice
+    ports:
+      - "8088:8088"
     environment:
       - EUREKA_SERVER_ADDRESS=http://serviceregistry:8761/eureka
       - CONFIG_SERVER_URL=configserver
