@@ -109,6 +109,20 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>3.4.3</version>
+				<configuration>
+					<from>
+						<image>openjdk:17-jdk-alpine</image>
+					</from>
+					<to>
+						<image>registry.hub.docker.com/etiennebel/userservice</image>
+						<tags>${project.version}</tags>
+					</to>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
