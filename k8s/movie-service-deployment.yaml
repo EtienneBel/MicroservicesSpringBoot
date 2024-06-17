@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: movie-service-app
+spec:
+  selector:
+    matchLabels:
+      app: movie-service-app
+  template:
+    metadata:
+      labels:
+        app: movie-service-app
+    spec:
+      containers:
+      - name: movie-service-app
+        image: etiennebel/movieservice
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8088
+        env:
+        - name: CONFIG_SERVER_URL
+          valueFrom:
+            configMapKeyRef:
+              name: config-cm
+              key: config_url
+        - name: DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: mysql-cm
+              key: hostname
+        - name: EUREKA_SERVER_ADDRESS
+          valueFrom:
+            configMapKeyRef:
+              name: eureka-cm
+              key: eureka_service_address
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: movie-service-svc
+spec:
+  selector:
+    app: movie-service-app
+  ports:
+  - port: 80
+    targetPort: 8088
